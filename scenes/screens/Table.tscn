@@ -1,0 +1,225 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlc1bp84seyav"]
+
+[ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
+[ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
+[ext_resource type="PackedScene" uid="uid://db7y64boqrwf8" path="res://scenes/elements/Card.tscn" id="3_65mtq"]
+[ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="3_qeqki"]
+[ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
+[ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
+
+[node name="Table" type="Node2D"]
+position = Vector2(995, 128)
+script = ExtResource("1_rr6y1")
+
+[node name="Background" parent="." instance=ExtResource("2_ukdoo")]
+
+[node name="Hand" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 453.0
+offset_right = 916.0
+offset_bottom = 606.0
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Left" type="Node" parent="Players"]
+
+[node name="Line2D" type="Line2D" parent="Players/Left"]
+position = Vector2(171, 152)
+scale = Vector2(1, 0.970588)
+points = PackedVector2Array(0, 0, 0, 363)
+width = 6.0
+
+[node name="Label" type="Label" parent="Players/Left"]
+texture_filter = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 176.0
+offset_top = 504.0
+offset_right = -724.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.57079
+theme = ExtResource("3_qeqki")
+text = "Player 1"
+
+[node name="Points" type="Node" parent="Players/Left"]
+
+[node name="Point_0" type="Sprite2D" parent="Players/Left/Points"]
+position = Vector2(192, 160)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_1" type="Sprite2D" parent="Players/Left/Points"]
+position = Vector2(192, 184)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_2" type="Sprite2D" parent="Players/Left/Points"]
+position = Vector2(192, 208)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Right" type="Node" parent="Players"]
+
+[node name="Line2D" type="Line2D" parent="Players/Right"]
+position = Vector2(980, 150)
+scale = Vector2(1, 0.970588)
+points = PackedVector2Array(0, 0, 0, 363)
+width = 6.0
+
+[node name="Label" type="Label" parent="Players/Right"]
+texture_filter = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 976.0
+offset_top = 152.0
+offset_right = 76.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -4.71238
+theme = ExtResource("3_qeqki")
+text = "Player 3"
+
+[node name="Points" type="Node" parent="Players/Right"]
+
+[node name="Point_0" type="Sprite2D" parent="Players/Right/Points"]
+position = Vector2(960, 494)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_1" type="Sprite2D" parent="Players/Right/Points"]
+position = Vector2(960, 470)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_2" type="Sprite2D" parent="Players/Right/Points"]
+position = Vector2(960, 446)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Top" type="Node" parent="Players"]
+
+[node name="Line2D" type="Line2D" parent="Players/Top"]
+position = Vector2(362, 155)
+scale = Vector2(1, 0.970588)
+points = PackedVector2Array(0, 0, 410, 0)
+width = 6.0
+
+[node name="Label" type="Label" parent="Players/Top"]
+texture_filter = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 362.0
+offset_top = 159.0
+offset_right = -538.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_qeqki")
+text = "Player 2
+"
+
+[node name="Points" type="Node" parent="Players/Top"]
+
+[node name="Point_0" type="Sprite2D" parent="Players/Top/Points"]
+position = Vector2(763, 176)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_1" type="Sprite2D" parent="Players/Top/Points"]
+position = Vector2(739, 176)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_2" type="Sprite2D" parent="Players/Top/Points"]
+position = Vector2(715, 176)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Bottom" type="Node" parent="Players"]
+
+[node name="Line2D" type="Line2D" parent="Players/Bottom"]
+position = Vector2(362, 509)
+scale = Vector2(1, 0.970588)
+points = PackedVector2Array(0, 0, 410, 0)
+width = 6.0
+
+[node name="Label" type="Label" parent="Players/Bottom"]
+texture_filter = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 464.0
+offset_right = -380.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_qeqki")
+text = "Player 4"
+horizontal_alignment = 2
+
+[node name="Points" type="Node" parent="Players/Bottom"]
+
+[node name="Point_0" type="Sprite2D" parent="Players/Bottom/Points"]
+position = Vector2(370.375, 488.375)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_1" type="Sprite2D" parent="Players/Bottom/Points"]
+position = Vector2(394.375, 488.375)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="Point_2" type="Sprite2D" parent="Players/Bottom/Points"]
+position = Vector2(418.375, 488.375)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bunnk")
+
+[node name="placeholder_cards" type="Node" parent="."]
+
+[node name="Card" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(552, 80)
+scale = Vector2(1.7, 1.7)
+
+[node name="Card2" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(1056, 320)
+rotation = -1.57079
+scale = Vector2(1.7, 1.7)
+
+[node name="Card3" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(616, 576)
+scale = Vector2(1.7, 1.7)
+
+[node name="Card4" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(568, 576)
+scale = Vector2(1.7, 1.7)
+
+[node name="Card5" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(512, 576)
+scale = Vector2(1.7, 1.7)
+
+[node name="Card6" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+texture_filter = 1
+position = Vector2(96, 320)
+rotation = -1.57079
+scale = Vector2(1.7, 1.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-413.753, 195.5)
+scale = Vector2(1.1548, 1.1548)
+texture = ExtResource("4_je4vn")
