@@ -3,12 +3,10 @@
 [ext_resource type="Script" path="res://scenes/screens/Menu.gd" id="1_tdmlt"]
 [ext_resource type="Theme" uid="uid://1ipo841utwkf" path="res://resources/styles/main.tres" id="2_wxb4a"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="3_vl3ro"]
+[ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="4_3f5u0"]
 [ext_resource type="StyleBox" uid="uid://cbq7te0vyyabj" path="res://resources/styles/text_input.tres" id="4_r2a24"]
 
 [sub_resource type="Theme" id="Theme_li8ts"]
-
-[sub_resource type="Theme" id="Theme_up11n"]
-default_font_size = 30
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_tdmlt")
@@ -17,7 +15,6 @@ script = ExtResource("1_tdmlt")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-texture_filter = 3
 offset_left = 168.0
 offset_top = 86.0
 offset_right = 988.0
@@ -80,23 +77,27 @@ theme = SubResource("Theme_li8ts")
 text = "Salir"
 metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="Control"]
+[node name="Name" type="LineEdit" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 28.732
 anchor_bottom = 16.126
 offset_left = 384.0
-offset_top = 256.0
+offset_top = 272.0
 offset_right = -381.28
-offset_bottom = -312.04
-theme = SubResource("Theme_up11n")
+offset_bottom = -296.04
+theme = ExtResource("4_3f5u0")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = ExtResource("4_r2a24")
 theme_override_styles/focus = ExtResource("4_r2a24")
-placeholder_text = "código de sala"
+placeholder_text = "nombre jugador"
 alignment = 1
+max_length = 15
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2(652, 227)
 
+[connection signal="pressed" from="Control/Nueva" to="." method="_on_nueva_pressed"]
+[connection signal="pressed" from="Control/Unirse" to="." method="_on_unirse_pressed"]
 [connection signal="pressed" from="Control/Salir" to="." method="_on_salir_pressed"]
+[connection signal="text_changed" from="Control/Name" to="." method="_on_name_text_changed"]

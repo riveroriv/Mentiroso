@@ -12,3 +12,8 @@ func _ready():
 	
 func change(index: int):
 	$ColorRect.color = colors[index]
+
+func _input(event):
+	if event.is_action_pressed("ui_color"):
+		$ColorRect.color = colors.pick_random()
+		
