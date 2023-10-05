@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2s3hdgwxurgr"]
+
+[ext_resource type="Script" path="res://scenes/screens/Join.gd" id="1_tjp28"]
+[ext_resource type="StyleBox" uid="uid://cbq7te0vyyabj" path="res://resources/styles/text_input.tres" id="2_vo4wv"]
+[ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="4_vyr8p"]
+
+[sub_resource type="Theme" id="Theme_7b53t"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_twlda"]
+
+[node name="Join" type="Node2D"]
+script = ExtResource("1_tjp28")
+
+[node name="Code" type="LineEdit" parent="."]
+offset_left = 365.0
+offset_top = 240.0
+offset_right = 788.0
+offset_bottom = 322.0
+theme = SubResource("Theme_7b53t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = ExtResource("2_vo4wv")
+theme_override_styles/focus = ExtResource("2_vo4wv")
+placeholder_text = "código de sala"
+alignment = 1
+max_length = 6
+
+[node name="Nueva" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = -6.625
+anchor_top = -0.725
+anchor_right = -6.625
+anchor_bottom = -0.725
+offset_left = 481.0
+offset_top = 380.0
+offset_right = 681.0
+offset_bottom = 461.0
+theme = SubResource("Theme_twlda")
+text = "Enter"
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" parent="." instance=ExtResource("4_vyr8p")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_changed" from="Code" to="." method="_on_code_text_changed"]
