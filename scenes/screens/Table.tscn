@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlc1bp84seyav"]
+[gd_scene load_steps=8 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="3_qeqki"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
 [ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
+[ext_resource type="PackedScene" uid="uid://nmw5vg5jvw0r" path="res://scenes/elements/Mazo.tscn" id="6_xfy3j"]
 
 [node name="Table" type="Node2D"]
 position = Vector2(995, 128)
@@ -184,6 +185,10 @@ position = Vector2(418.375, 488.375)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_bunnk")
 
+[node name="Mazo" parent="." instance=ExtResource("6_xfy3j")]
+position = Vector2(-410, 443)
+scale = Vector2(1.7, 1.7)
+
 [node name="placeholder_cards" type="Node" parent="."]
 
 [node name="Card" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
@@ -198,16 +203,19 @@ rotation = -1.57079
 scale = Vector2(1.7, 1.7)
 
 [node name="Card3" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+visible = false
 texture_filter = 1
 position = Vector2(616, 576)
 scale = Vector2(1.7, 1.7)
 
 [node name="Card4" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+visible = false
 texture_filter = 1
 position = Vector2(568, 576)
 scale = Vector2(1.7, 1.7)
 
 [node name="Card5" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
+visible = false
 texture_filter = 1
 position = Vector2(512, 576)
 scale = Vector2(1.7, 1.7)
