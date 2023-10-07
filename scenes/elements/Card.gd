@@ -4,7 +4,9 @@ var animation_player : AnimationPlayer
 var posicion_inicial_y=self.position.y
 var scale_inicial= self.scale
 var card_select=false
+var nombre=""
 const MOVER_CARTA=40
+
 func _ready():
 	animation_player = $AnimationPlayer
 

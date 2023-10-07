@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlc1bp84seyav"]
+[gd_scene load_steps=9 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
@@ -6,7 +6,8 @@
 [ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="3_qeqki"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
 [ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
-[ext_resource type="PackedScene" uid="uid://nmw5vg5jvw0r" path="res://scenes/elements/Mazo.tscn" id="6_xfy3j"]
+[ext_resource type="PackedScene" uid="uid://bou8xoaw7fps" path="res://scenes/elements/Player.tscn" id="5_8qld6"]
+[ext_resource type="PackedScene" path="res://scenes/elements/ZonaDespliegue.tscn" id="8_kfs8j"]
 
 [node name="Table" type="Node2D"]
 position = Vector2(995, 128)
@@ -185,9 +186,8 @@ position = Vector2(418.375, 488.375)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_bunnk")
 
-[node name="Mazo" parent="." instance=ExtResource("6_xfy3j")]
-position = Vector2(-410, 443)
-scale = Vector2(1.7, 1.7)
+[node name="Jugador" parent="Players" instance=ExtResource("5_8qld6")]
+position = Vector2(562, 583)
 
 [node name="placeholder_cards" type="Node" parent="."]
 
@@ -231,3 +231,6 @@ visible = false
 position = Vector2(-413.753, 195.5)
 scale = Vector2(1.1548, 1.1548)
 texture = ExtResource("4_je4vn")
+
+[node name="ZonaDespliegue" parent="." instance=ExtResource("8_kfs8j")]
+position = Vector2(-368, 228)
