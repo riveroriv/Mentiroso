@@ -5,6 +5,7 @@
 [sub_resource type="GDScript" id="GDScript_qo73m"]
 
 [node name="Card" type="Node2D"]
+texture_filter = 1
 script = SubResource("GDScript_qo73m")
 
 [node name="PokerCard" parent="." instance=ExtResource("2_1ubnu")]
