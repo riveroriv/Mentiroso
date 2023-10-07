@@ -11,7 +11,7 @@ func _ready():
 	
 	
 func add_n_cards()->void:
-	for _x in 1:
+	for _x in 31:
 		var card = poker_card.instantiate()
 		add_child(card)
 	arrange_cards()
@@ -45,6 +45,7 @@ func desplegar_cartas():
 		remove_child(card)
 		arrange_cards()
 	return lista_cartas_desplegar
+	
 func determinar_separacion_cartas(num_cartas):
 	if num_cartas>30:
 		carta_separacion=10
