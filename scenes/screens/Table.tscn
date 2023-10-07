@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
-[ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="3_qeqki"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
-[ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
 [ext_resource type="PackedScene" uid="uid://bou8xoaw7fps" path="res://scenes/elements/Player.tscn" id="5_8qld6"]
 [ext_resource type="PackedScene" uid="uid://crbatmaq8k3fk" path="res://scenes/elements/PokerCard.tscn" id="6_63xos"]
 [ext_resource type="PackedScene" uid="uid://dg7vxpfsguln5" path="res://scenes/elements/ZonaDespliegue.tscn" id="8_kfs8j"]
+
+[sub_resource type="Theme" id="Theme_ntopf"]
+default_font_size = 25
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nux0u"]
 
 [node name="Table" type="Node2D"]
 position = Vector2(995, 128)
@@ -46,7 +49,7 @@ offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.57079
-theme = ExtResource("3_qeqki")
+theme = SubResource("Theme_ntopf")
 text = "Player 1"
 
 [node name="Points" type="Node" parent="Players/Left"]
@@ -86,7 +89,7 @@ offset_bottom = -458.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -4.71238
-theme = ExtResource("3_qeqki")
+theme = SubResource("Theme_ntopf")
 text = "Player 3"
 
 [node name="Points" type="Node" parent="Players/Right"]
@@ -125,7 +128,7 @@ offset_right = -538.0
 offset_bottom = -451.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_qeqki")
+theme = SubResource("Theme_ntopf")
 text = "Player 2
 "
 
@@ -165,7 +168,7 @@ offset_right = -380.0
 offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_qeqki")
+theme = SubResource("Theme_ntopf")
 text = "Player 4"
 horizontal_alignment = 2
 
@@ -206,7 +209,7 @@ rotation = 1.57052
 visible = false
 position = Vector2(-413.753, 195.5)
 scale = Vector2(1.1548, 1.1548)
-texture = ExtResource("4_je4vn")
+texture = SubResource("CompressedTexture2D_nux0u")
 
 [node name="ZonaDespliegue" parent="." instance=ExtResource("8_kfs8j")]
 position = Vector2(-368, 228)

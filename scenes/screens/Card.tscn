@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc45hkv27rewb"]
+[gd_scene load_steps=3 format=3 uid="uid://cy2wvish6fucq"]
 
 [ext_resource type="Texture2D" uid="uid://pf42wa8av8rp" path="res://resources/img/baseCarta.png" id="1_s01mn"]
 [ext_resource type="FontFile" uid="uid://mbegdpg6cuma" path="res://resources/fonts/cards/CARDC___.TTF" id="3_rv4yc"]
@@ -18,6 +18,7 @@ grow_vertical = 2
 pivot_offset = Vector2(0.5, 0.5)
 
 [node name="CardBase" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = -166.0
 offset_top = -218.0
@@ -28,6 +29,7 @@ pivot_offset = Vector2(0.5, 0.5)
 texture = ExtResource("1_s01mn")
 
 [node name="CardIcon" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = -103.0
 offset_top = -37.0
@@ -37,6 +39,7 @@ scale = Vector2(0.08, 0.08)
 pivot_offset = Vector2(0.5, 0.5)
 
 [node name="CardValue" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = -147.0
 offset_top = -196.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crbatmaq8k3fk"]
 
 [ext_resource type="Script" path="res://scenes/elements/PokerCard.gd" id="1_b3m35"]
-[ext_resource type="PackedScene" uid="uid://dc45hkv27rewb" path="res://scenes/screens/Card.tscn" id="2_scsa3"]
+[ext_resource type="PackedScene" uid="uid://cy2wvish6fucq" path="res://scenes/screens/Card.tscn" id="2_scsa3"]
 
 [node name="PokerCard" type="Node2D"]
 position = Vector2(2.38419e-07, -1.19209e-07)
