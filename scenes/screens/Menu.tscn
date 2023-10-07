@@ -26,16 +26,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 172.0
-offset_top = 120.0
-offset_right = -157.0
-offset_bottom = -343.0
+offset_left = 168.0
+offset_top = 112.0
+offset_right = -161.0
+offset_bottom = -351.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_sxkmp")
 text = "MENTIROSO"
 
 [node name="Name" type="LineEdit" parent="Control"]
+layout_mode = 0
 offset_left = 364.0
 offset_top = 294.0
 offset_right = 787.0

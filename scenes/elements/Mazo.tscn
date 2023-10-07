@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://nmw5vg5jvw0r"]
-
-[ext_resource type="Script" path="res://scenes/elements/Mazo.gd" id="1_h5ikk"]
-
-[node name="Mazo" type="Node2D"]
-position = Vector2(579, 308)
-script = ExtResource("1_h5ikk")

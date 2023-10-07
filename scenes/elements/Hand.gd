@@ -1,8 +1,8 @@
 extends Node2D
 
-const poker_card = preload("res://scenes/elements/PokerCard.tscn")
 @onready var mazo = $"."
-var carta_separacion = 25  # La distancia entre las cartas en el eje X
+const poker_card = preload("res://scenes/elements/Card.tscn")
+var carta_separacion = 40  # La distancia entre las cartas en el eje X
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,15 +48,11 @@ func desplegar_cartas():
 	
 func determinar_separacion_cartas(num_cartas):
 	if num_cartas>30:
-		carta_separacion=10
-	elif  num_cartas>20:
-		carta_separacion=15
-	elif  num_cartas>10:
 		carta_separacion=20
-	else:
+	elif  num_cartas>20:
 		carta_separacion=25
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+	elif  num_cartas>10:
+		carta_separacion=30
+	else:
+		carta_separacion=40
 
