@@ -1,14 +1,19 @@
 extends Node2D
-
+const poker_card = preload("res://scenes/elements/PokerCard.tscn")
 @onready var zona_depliegue = $"."
 var carta_separacion = 25  # La distancia entre las cartas en el eje X
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	Global.connect("lista_cartas_desplegar", _on_lista_cartas_desplegar)
 
 func _on_lista_cartas_desplegar(cartas_desplegar):
-	for i in range(cartas_desplegar.size()):
-		add_child(cartas_desplegar[i])
+	for i in range(0,cartas_desplegar.size(),2):
+		var card = poker_card.instantiate()
+		card.chosen_suit=cartas_desplegar[i]
+		print(card.chosen_suit)
+		card.chosen_value=cartas_desplegar[i+1]
+		print(card.chosen_value)
+		add_child(card)
 	arrange_cards()
 	
 	
@@ -24,5 +29,5 @@ func arrange_cards() -> void:
 		card.position.x = posicion_inicial + i * carta_separacion
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

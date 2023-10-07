@@ -4,14 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://nmw5vg5jvw0r" path="res://scenes/elements/Mazo.tscn" id="2_gf8t2"]
 
 [node name="Jugador" type="Node2D"]
-position = Vector2(539, 315)
+position = Vector2(539, 353)
 script = ExtResource("1_t5n5p")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="Desplegar" type="Button" parent="."]
-offset_left = -53.0
-offset_top = -173.0
-offset_right = 33.0
-offset_bottom = -142.0
+offset_left = -47.0
+offset_top = -175.0
+offset_right = 39.0
+offset_bottom = -144.0
 text = "Desplegar"
 metadata/_edit_use_anchors_ = true
 

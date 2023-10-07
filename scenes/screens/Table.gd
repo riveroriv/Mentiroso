@@ -1,7 +1,7 @@
 extends Node2D
 
 var card_block : Control
-const card_scene = preload("res://scenes/elements/Card.tscn")
+const card_scene = preload("res://scenes/elements/PokerCard.tscn")
 
 func _ready():
 	print(get_viewport().size)
@@ -10,7 +10,7 @@ func _ready():
 		var card_instance = card_scene.instantiate()
 		card_block.add_child(card_instance)
 
-func _process(delta):
+func _process(_delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction > 0:
 		var card = card_scene.instantiate()

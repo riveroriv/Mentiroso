@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
-[ext_resource type="PackedScene" uid="uid://db7y64boqrwf8" path="res://scenes/elements/Card.tscn" id="3_65mtq"]
 [ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="3_qeqki"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
 [ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
 [ext_resource type="PackedScene" uid="uid://bou8xoaw7fps" path="res://scenes/elements/Player.tscn" id="5_8qld6"]
-[ext_resource type="PackedScene" path="res://scenes/elements/ZonaDespliegue.tscn" id="8_kfs8j"]
+[ext_resource type="PackedScene" uid="uid://crbatmaq8k3fk" path="res://scenes/elements/PokerCard.tscn" id="6_63xos"]
+[ext_resource type="PackedScene" uid="uid://dg7vxpfsguln5" path="res://scenes/elements/ZonaDespliegue.tscn" id="8_kfs8j"]
 
 [node name="Table" type="Node2D"]
 position = Vector2(995, 128)
@@ -187,44 +187,20 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_bunnk")
 
 [node name="Jugador" parent="Players" instance=ExtResource("5_8qld6")]
-position = Vector2(562, 583)
+position = Vector2(561, 581)
 
 [node name="placeholder_cards" type="Node" parent="."]
 
-[node name="Card" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-texture_filter = 1
-position = Vector2(552, 80)
-scale = Vector2(1.7, 1.7)
+[node name="PokerCard" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(560, 77)
 
-[node name="Card2" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-texture_filter = 1
-position = Vector2(1056, 320)
-rotation = -1.57079
-scale = Vector2(1.7, 1.7)
+[node name="PokerCard2" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(1075, 312)
+rotation = -1.57657
 
-[node name="Card3" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-visible = false
-texture_filter = 1
-position = Vector2(616, 576)
-scale = Vector2(1.7, 1.7)
-
-[node name="Card4" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-visible = false
-texture_filter = 1
-position = Vector2(568, 576)
-scale = Vector2(1.7, 1.7)
-
-[node name="Card5" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-visible = false
-texture_filter = 1
-position = Vector2(512, 576)
-scale = Vector2(1.7, 1.7)
-
-[node name="Card6" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
-texture_filter = 1
-position = Vector2(96, 320)
-rotation = -1.57079
-scale = Vector2(1.7, 1.7)
+[node name="PokerCard3" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(84, 304)
+rotation = 1.57052
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

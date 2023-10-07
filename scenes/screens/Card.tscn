@@ -5,33 +5,44 @@
 
 [node name="Card" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.001
+anchor_top = 0.002
+anchor_right = 0.001
+anchor_bottom = 0.002
+offset_left = -0.152
+offset_top = -0.296
+offset_right = -0.152
+offset_bottom = -0.296
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
 
 [node name="CardBase" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 660.0
-offset_bottom = 872.0
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
 scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
 texture = ExtResource("1_s01mn")
 
 [node name="CardIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 202.0
-offset_right = 2463.0
-offset_bottom = 2275.0
+offset_left = -103.0
+offset_top = -37.0
+offset_right = 2297.0
+offset_bottom = 2363.0
 scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(0.5, 0.5)
 
 [node name="CardValue" type="Label" parent="."]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 22.0
-offset_right = 128.0
-offset_bottom = 142.0
+offset_left = -147.0
+offset_top = -196.0
+offset_right = -38.0
+offset_bottom = -76.0
+pivot_offset = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rv4yc")
 theme_override_font_sizes/font_size = 100

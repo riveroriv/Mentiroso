@@ -1,19 +1,18 @@
 extends Node2D
 
-const escena_carta = preload("res://scenes/elements/Card.tscn")
+const poker_card = preload("res://scenes/elements/PokerCard.tscn")
 @onready var mazo = $"."
 var carta_separacion = 25  # La distancia entre las cartas en el eje X
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_5_cards()
+	add_n_cards()
 	
 	
-func add_5_cards()->void:
+func add_n_cards()->void:
 	for _x in 10:
-		var card = escena_carta.instantiate()
-		card.nombre=_x
+		var card = poker_card.instantiate()
 		add_child(card)
 	arrange_cards()
 		
@@ -31,21 +30,23 @@ func arrange_cards() -> void:
 func desplegar_cartas():
 	var num_cartas = mazo.get_child_count()
 	var cartas_eliminar=[]
+	var lista_cartas_desplegar=[]
 	for i in range(num_cartas):
 		var card = mazo.get_child(i)
-		#print(card.nombre)
 		#print(card.card_select)
 		if card.card_select==true:
-			card.global_position = Vector2(650, 350)
+			#card.global_position = Vector2(650, 350)
 			cartas_eliminar.append(card)
+			lista_cartas_desplegar.append(card.chosen_suit)
+			lista_cartas_desplegar.append(card.chosen_value)
 			
 	for i in range(cartas_eliminar.size()):
 		var card = cartas_eliminar[i]
 		remove_child(card)
 		arrange_cards()
-	return cartas_eliminar
+	return lista_cartas_desplegar
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
