@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc45hkv27rewb"]
+
+[ext_resource type="Texture2D" uid="uid://pf42wa8av8rp" path="res://resources/img/baseCarta.png" id="1_s01mn"]
+[ext_resource type="FontFile" uid="uid://mbegdpg6cuma" path="res://resources/fonts/cards/CARDC___.TTF" id="3_rv4yc"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardBase" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 872.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_s01mn")
+
+[node name="CardIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 202.0
+offset_right = 2463.0
+offset_bottom = 2275.0
+scale = Vector2(0.08, 0.08)
+
+[node name="CardValue" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 22.0
+offset_right = 128.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rv4yc")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

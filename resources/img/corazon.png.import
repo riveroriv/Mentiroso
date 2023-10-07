@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xensbl1lxw5d"
-path="res://.godot/imported/cronometro.png-02874e2dc85b31af63c00a55c0609ed5.ctex"
+uid="uid://bbcy2hu347w8l"
+path="res://.godot/imported/corazon.png-b64e88a0f7c43d466decad084480e403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/img/cronometro.png"
-dest_files=["res://.godot/imported/cronometro.png-02874e2dc85b31af63c00a55c0609ed5.ctex"]
+source_file="res://resources/img/corazon.png"
+dest_files=["res://.godot/imported/corazon.png-b64e88a0f7c43d466decad084480e403.ctex"]
 
 [params]
 
