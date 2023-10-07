@@ -11,11 +11,11 @@ func _on_name_text_changed(new_text):
 	player_name = new_text
 	
 
-func _on_unirse_pressed():
+func _on_join_pressed():
 	get_node("/root/Main").change_scene("res://scenes/screens/Join.tscn", player_name)
 
-func _on_nueva_pressed():
+func _on_new_pressed():
 	get_node("/root/Main").change_scene("res://scenes/screens/Table.tscn", player_name)
 
-func _on_salir_pressed():
+func _on_quit_pressed():
 	get_tree().quit()

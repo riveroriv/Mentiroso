@@ -1,11 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2s3hdgwxurgr"]
 
 [ext_resource type="Script" path="res://scenes/screens/Join.gd" id="1_tjp28"]
+[ext_resource type="Theme" uid="uid://bk5kw87j0egdy" path="res://resources/styles/input.tres" id="2_e8rne"]
 [ext_resource type="StyleBox" uid="uid://cbq7te0vyyabj" path="res://resources/styles/text_input.tres" id="2_vo4wv"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="4_vyr8p"]
-
-[sub_resource type="Theme" id="Theme_7b53t"]
-default_font_size = 30
 
 [sub_resource type="Theme" id="Theme_twlda"]
 
@@ -17,7 +15,7 @@ offset_left = 365.0
 offset_top = 240.0
 offset_right = 788.0
 offset_bottom = 322.0
-theme = SubResource("Theme_7b53t")
+theme = ExtResource("2_e8rne")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = ExtResource("2_vo4wv")
 theme_override_styles/focus = ExtResource("2_vo4wv")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlc1bp84seyav"]
+[gd_scene load_steps=6 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
-[ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
 [ext_resource type="Theme" uid="uid://c84ls6ybgr3vq" path="res://resources/styles/text_strong.tres" id="4_ohtey"]
 [ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="7_d8y1y"]
 
@@ -11,22 +10,7 @@
 position = Vector2(974.002, 96)
 script = ExtResource("1_rr6y1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-398.002, 229)
-scale = Vector2(1.1548, 1.1548)
-texture = ExtResource("4_je4vn")
-
 [node name="Background" parent="." instance=ExtResource("2_ukdoo")]
-
-[node name="Hand" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 300.0
-offset_top = 453.0
-offset_right = 916.0
-offset_bottom = 606.0
 
 [node name="Players" type="Node" parent="."]
 
@@ -191,20 +175,51 @@ position = Vector2(440, 477)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("4_bunnk")
 
-[node name="Node" type="Node" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -974.0
+offset_top = -96.0
+offset_right = 178.0
+offset_bottom = 552.0
 
-[node name="Label" type="Label" parent="Node"]
-offset_left = 312.0
-offset_top = 347.0
-offset_right = 440.0
-offset_bottom = 451.0
+[node name="CardRound" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 362.998
+offset_top = 342.0
+offset_right = -661.002
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("7_d8y1y")
 text = "12"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Node"]
-offset_left = 480.0
-offset_top = 384.0
-offset_right = 592.0
-offset_bottom = 467.0
+[node name="Mentiroso" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 542.998
+offset_top = 362.0
+offset_right = -531.002
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "M"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 684.998
+offset_top = 362.0
+offset_right = -388.002
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "desplegar"
