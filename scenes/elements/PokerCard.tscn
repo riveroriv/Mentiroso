@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://crbatmaq8k3fk"]
+
+[ext_resource type="Script" path="res://scenes/elements/PokerCard.gd" id="1_b3m35"]
+[ext_resource type="PackedScene" uid="uid://cy2wvish6fucq" path="res://scenes/screens/Card.tscn" id="2_scsa3"]
+
+[node name="PokerCard" type="Node2D"]
+position = Vector2(2.38419e-07, -1.19209e-07)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_b3m35")
+
+[node name="Card" parent="." instance=ExtResource("2_scsa3")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Carta" type="TextureButton" parent="."]
+offset_left = -153.0
+offset_top = -200.0
+offset_right = 140.0
+offset_bottom = 203.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="Carta" to="." method="_on_carta_mouse_entered"]
+[connection signal="mouse_exited" from="Carta" to="." method="_on_carta_mouse_exited"]
+[connection signal="pressed" from="Carta" to="." method="_on_carta_pressed"]

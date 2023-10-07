@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+[gd_scene load_steps=9 format=3 uid="uid://dlc1bp84seyav"]
+
+[ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
+[ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
+[ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
+[ext_resource type="PackedScene" uid="uid://bou8xoaw7fps" path="res://scenes/elements/Player.tscn" id="5_8qld6"]
+[ext_resource type="PackedScene" uid="uid://crbatmaq8k3fk" path="res://scenes/elements/PokerCard.tscn" id="6_63xos"]
+[ext_resource type="PackedScene" uid="uid://dg7vxpfsguln5" path="res://scenes/elements/ZonaDespliegue.tscn" id="8_kfs8j"]
+
+[sub_resource type="Theme" id="Theme_ntopf"]
+default_font_size = 25
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nux0u"]
+=======
 [gd_scene load_steps=8 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
@@ -7,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ovk8b0hfqm6r" path="res://resources/img/mk.png" id="4_je4vn"]
 [ext_resource type="Theme" uid="uid://c84ls6ybgr3vq" path="res://resources/styles/text_strong.tres" id="4_ohtey"]
 [ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="7_d8y1y"]
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
 
 [node name="Table" type="Node2D"]
 position = Vector2(974.002, 96)
@@ -51,7 +67,11 @@ offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.57079
+<<<<<<< HEAD
+theme = SubResource("Theme_ntopf")
+=======
 theme = ExtResource("4_ohtey")
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
 text = "Player 1"
 
 [node name="Points" type="Node" parent="Players/Left"]
@@ -91,7 +111,11 @@ offset_bottom = -452.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -4.71238
+<<<<<<< HEAD
+theme = SubResource("Theme_ntopf")
+=======
 theme = ExtResource("4_ohtey")
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
 text = "Player 3"
 metadata/_edit_use_anchors_ = true
 
@@ -131,7 +155,11 @@ offset_right = -532.0
 offset_bottom = -454.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< HEAD
+theme = SubResource("Theme_ntopf")
+=======
 theme = ExtResource("4_ohtey")
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
 text = "Player 2
 "
 
@@ -171,7 +199,11 @@ offset_right = -388.0
 offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< HEAD
+theme = SubResource("Theme_ntopf")
+=======
 theme = ExtResource("4_ohtey")
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
 text = "Player 4"
 horizontal_alignment = 2
 
@@ -192,8 +224,32 @@ position = Vector2(440, 477)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("4_bunnk")
 
+[node name="Jugador" parent="Players" instance=ExtResource("5_8qld6")]
+position = Vector2(577, 581)
+
 [node name="placeholder_cards" type="Node" parent="."]
 
+<<<<<<< HEAD
+[node name="PokerCard" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(560, 77)
+
+[node name="PokerCard2" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(1075, 312)
+rotation = -1.57657
+
+[node name="PokerCard3" parent="placeholder_cards" instance=ExtResource("6_63xos")]
+position = Vector2(84, 304)
+rotation = 1.57052
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-413.753, 195.5)
+scale = Vector2(1.1548, 1.1548)
+texture = SubResource("CompressedTexture2D_nux0u")
+
+[node name="ZonaDespliegue" parent="." instance=ExtResource("8_kfs8j")]
+position = Vector2(-368, 228)
+=======
 [node name="Card" parent="placeholder_cards" instance=ExtResource("3_65mtq")]
 texture_filter = 1
 position = Vector2(480, 288)
@@ -243,3 +299,4 @@ offset_top = 384.0
 offset_right = 592.0
 offset_bottom = 467.0
 text = "M"
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597

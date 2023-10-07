@@ -1,4 +1,6 @@
 extends Node2D
+<<<<<<< HEAD
+=======
 
 var player_name = null;
 
@@ -19,3 +21,4 @@ func _on_nueva_pressed():
 
 func _on_salir_pressed():
 	get_tree().quit()
+>>>>>>> 3481d6ac069e715be5b1c54c74db0ac47f027597
