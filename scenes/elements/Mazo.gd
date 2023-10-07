@@ -11,7 +11,7 @@ func _ready():
 	
 	
 func add_n_cards()->void:
-	for _x in 10:
+	for _x in 1:
 		var card = poker_card.instantiate()
 		add_child(card)
 	arrange_cards()
@@ -19,12 +19,12 @@ func add_n_cards()->void:
 # Función para distribuir las cartas a lo largo del eje X
 func arrange_cards() -> void:
 	var num_cartas = mazo.get_child_count()
+	determinar_separacion_cartas(num_cartas)
 	var separacion_total = num_cartas * carta_separacion
 	var posicion_inicial = -separacion_total / 2  # Centro las cartas
 
 	for i in range(num_cartas):
 		var card = mazo.get_child(i)
-		
 		card.position.x = posicion_inicial + i * carta_separacion
 		
 func desplegar_cartas():
@@ -45,7 +45,16 @@ func desplegar_cartas():
 		remove_child(card)
 		arrange_cards()
 	return lista_cartas_desplegar
-
+func determinar_separacion_cartas(num_cartas):
+	if num_cartas>30:
+		carta_separacion=10
+	elif  num_cartas>20:
+		carta_separacion=15
+	elif  num_cartas>10:
+		carta_separacion=20
+	else:
+		carta_separacion=25
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
