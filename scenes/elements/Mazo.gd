@@ -11,7 +11,7 @@ func _ready():
 	
 	
 func add_n_cards()->void:
-	for _x in 31:
+	for _x in 20:
 		var card = poker_card.instantiate()
 		add_child(card)
 	arrange_cards()
