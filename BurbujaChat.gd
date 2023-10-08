@@ -3,6 +3,7 @@ extends Node2D
 # Preload the Card scene.
 #const Card = preload("res://scenes/screens/Card.tscn")
 @onready var burbuja = $Burbuja
+@onready var burbuja_texto = $Burbuja/Texto
 
 
 # Define the card values and suits.
@@ -17,6 +18,17 @@ func random_arreglo(arreglo):
 	# Generar un índice aleatorio entre 0 y la longitud del arreglo - 1
 	var indice_aleatorio = randi() % longitud
 	return indice_aleatorio
+
+func direccion_burbuja(direccion):
+	if direccion=="BOTTOM":
+		burbuja.rotation_degrees=0
+	elif direccion=="LEFT":
+		burbuja.rotation_degrees=90
+	elif direccion=="TOP":
+		burbuja.rotation_degrees=180
+		burbuja_texto.rotation_degrees=180
+	elif direccion=="RIGHT":
+		burbuja.rotation_degrees=270
 	
 func _ready():
 	# Generate the chosen card.
@@ -25,6 +37,7 @@ func _ready():
 	
 	# Set the card value.
 	burbuja.get_node("Texto").text = chosen_value
+	direccion_burbuja("TOP")
 	
 	# Position the card on the screen (you can adjust this to suit your needs).
 	# card.position = Vector2(randf_range(0, get_viewport().size.x), randf_range(0, get_viewport().size.y))
