@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var front = $Faces/Front
 @onready var faces = $Faces
+@onready var back = $Faces/Back
 
 @onready var posicion_inicial_y = faces.position.y
 @onready var scale_inicial = faces.scale
@@ -31,6 +32,10 @@ func _ready():
 	front.get_node("CardBase").texture = load("res://resources/img/baseCarta.png")
 	# Set the card value.
 	front.get_node("CardValue").text = value
+	if !ownership:
+		back.z_index = 1
+	else:
+		back.z_index = 0
 	
 func hover():
 	if (ownership):
@@ -64,3 +69,6 @@ func _on_click_area_mouse_entered():
 
 func _on_click_area_mouse_exited():
 	leave()
+
+func reveal():
+	$AnimationPlayer.play("flip")

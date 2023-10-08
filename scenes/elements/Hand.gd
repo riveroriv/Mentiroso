@@ -5,26 +5,19 @@ extends Node2D
 const poker_card = preload("res://scenes/elements/Card.tscn")
 
 var carta_separacion = 40  # La distancia entre las cartas en el eje X
+var factor_separador_vertical = 0.6 # porcentaje de separación
 var arrage_time = 1.0
 var elapsed_time = 0.0
 var ownership = false
 var vertical = false
-var factor_separador_vertical = 0.6 # porcentaje de separación
 
-func _input(event):
-	if event.is_action_pressed("mentiroso"):
-		add_card(1,2)
 
-func _ready():
-	pass
-	
 func add_cards(cards)->void:
 	for card in cards:
 		add_card(card[0], card[1])
 	arrange_cards()
 
-
-func add_card(value, suit):
+func add_card(value="A", suit="espada"):
 	var card = poker_card.instantiate()
 	card.value = value;
 	card.suit = suit;

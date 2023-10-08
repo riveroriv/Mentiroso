@@ -12,24 +12,29 @@ const SUITS = ["espada", "trebol", "corazon", "diamante"]
 
 var skin = "normal"
 
-func barajado(max, players = 4):
+func barajado(value_subset, players = 4):
 	var baraja = []
 	var hands = []
 	
-	for i in range(max):
+	for i in range(value_subset):
 		for suit in SUITS:
 			baraja.append([VALUES[i], suit])
 	baraja.shuffle()
 	
 	for p in range(players):
 		var player_cards = []
-		for c in range(max):
+		for c in range(value_subset):
 			player_cards.append(baraja.pop_front())
 		hands.append(player_cards)
 	return hands
 
 
 func _ready():
+	var name = get_node("/root/Main").player_name
+	if name != null:
+		print(name)
+		$Players/Bottom/Label.text = name
+	
 	hand.ownership = true
 	hand_l.vertical = true
 	hand_l.arrange_cards()
