@@ -52,7 +52,7 @@ offset_left = 798.0
 offset_top = 471.0
 offset_right = -255.0
 offset_bottom = -110.0
-text = "Sailr
+text = "SALIR
 "
 
 [node name="Label" type="Label" parent="Options"]
