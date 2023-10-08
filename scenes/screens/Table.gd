@@ -6,19 +6,14 @@ extends Node2D
 @onready var hand_r = $Hands/Right
 
 
-const VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-const SUITS = ["espada", "trebol", "corazon", "diamante"]
-
-
-var skin = "normal"
 
 func barajado(value_subset, players = 4):
 	var baraja = []
 	var hands = []
 	
 	for i in range(value_subset):
-		for suit in SUITS:
-			baraja.append([VALUES[i], suit])
+		for suit in Baraja.SUITS:
+			baraja.append([Baraja.VALUES[i], suit])
 	baraja.shuffle()
 	
 	for p in range(players):
@@ -30,10 +25,9 @@ func barajado(value_subset, players = 4):
 
 
 func _ready():
-	var name = get_node("/root/Main").player_name
-	if name != null:
-		print(name)
-		$Players/Bottom/Label.text = name
+	Info.player_name
+	if Info.player_name != "":
+		$Players/Bottom/Label.text = Info.player_name
 	
 	hand.ownership = true
 	hand_l.vertical = true

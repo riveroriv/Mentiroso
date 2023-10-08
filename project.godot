@@ -20,7 +20,10 @@ boot_splash/minimum_display_time=1000
 
 [autoload]
 
-Global="*res://scenes/global/Global.tscn"
+GameManager="*res://scenes/global/GameManager.gd"
+Baraja="*res://scenes/global/Baraja.gd"
+MPC="*res://scenes/global/MultiplayerController.gd"
+Info="*res://scenes/global/Info.gd"
 
 [display]
 

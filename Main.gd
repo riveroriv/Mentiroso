@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var current_scene = null
 var next_scene = null
-var player_name = null
 var full_screen = false
 
 
@@ -13,11 +12,8 @@ func _ready():
 func change_scene(scene_path, arg = null):
 	next_scene = load(scene_path).instantiate()
 	if next_scene.has_node("arg"):
-		print("oh yhea")
 		next_scene.arg = arg
 	if current_scene:
-		if current_scene.name == 'Menu':
-			player_name = arg
 		current_scene.queue_free()
 	add_child(next_scene)
 	current_scene = next_scene

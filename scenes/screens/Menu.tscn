@@ -15,40 +15,6 @@ script = ExtResource("1_tdmlt")
 
 [node name="Background" parent="." instance=ExtResource("2_s1idk")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1149.0
-offset_bottom = 647.0
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 168.0
-offset_top = 112.0
-offset_right = -161.0
-offset_bottom = -351.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_sxkmp")
-text = "MENTIROSO"
-
-[node name="Name" type="LineEdit" parent="Control"]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 294.0
-offset_right = 787.0
-offset_bottom = 376.0
-theme = ExtResource("4_c6hdo")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = ExtResource("5_afjex")
-theme_override_styles/focus = ExtResource("5_afjex")
-placeholder_text = "nombre de jugador"
-alignment = 1
-max_length = 15
-
 [node name="Options" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -89,7 +55,35 @@ offset_bottom = -110.0
 text = "Sailr
 "
 
-[connection signal="text_changed" from="Control/Name" to="." method="_on_name_text_changed"]
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+offset_top = 112.0
+offset_right = 948.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sxkmp")
+text = "MENTIROSO"
+
+[node name="Name" type="LineEdit" parent="Options"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 294.0
+offset_right = 787.0
+offset_bottom = 376.0
+theme = ExtResource("4_c6hdo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = ExtResource("5_afjex")
+theme_override_styles/focus = ExtResource("5_afjex")
+placeholder_text = "nombre de jugador"
+alignment = 1
+max_length = 15
+
 [connection signal="pressed" from="Options/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Options/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="Options/Quit" to="." method="_on_quit_pressed"]
+[connection signal="text_changed" from="Options/Name" to="." method="_on_name_text_changed"]

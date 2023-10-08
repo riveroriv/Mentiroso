@@ -11,13 +11,9 @@ var card_select = false
 var ownership = false
 const MOVER_CARTA = 130
 
-# Define the card values and suits.
-var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-var suits = ["espada", "trebol", "corazon", "diamante"]
-
 # Define the chosen suit and value.
-var suit = suits[random_arreglo(suits)]
-var value = values[random_arreglo(values)]
+var suit = Baraja.SUITS[random_arreglo(Baraja.SUITS)]
+var value = Baraja.VALUES[random_arreglo(Baraja.VALUES)]
 
 func random_arreglo(arreglo):
 	# Obtener la longitud del arreglo
