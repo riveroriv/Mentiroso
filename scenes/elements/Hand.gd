@@ -1,38 +1,59 @@
 extends Node2D
 
-@onready var mazo = $"."
+@onready var cards = $Cards
+
 const poker_card = preload("res://scenes/elements/Card.tscn")
+
 var carta_separacion = 40  # La distancia entre las cartas en el eje X
+var arrage_time = 1.0
+var elapsed_time = 0.0
+var ownership = false
+var vertical = false
+var factor_separador_vertical = 0.6 # porcentaje de separación
 
+func _input(event):
+	if event.is_action_pressed("mentiroso"):
+		add_card(1,2)
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	add_n_cards()
+	pass
 	
-	
-func add_n_cards()->void:
-	for _x in 20:
-		var card = poker_card.instantiate()
-		add_child(card)
+func add_cards(cards)->void:
+	for card in cards:
+		add_card(card[0], card[1])
 	arrange_cards()
-		
+
+
+func add_card(value, suit):
+	var card = poker_card.instantiate()
+	card.value = value;
+	card.suit = suit;
+	card.ownership = ownership
+	cards.add_child(card)
+	arrange_cards()
+
+
 # Función para distribuir las cartas a lo largo del eje X
 func arrange_cards() -> void:
-	var num_cartas = mazo.get_child_count()
+	var num_cartas = cards.get_child_count()
 	determinar_separacion_cartas(num_cartas)
 	var separacion_total = num_cartas * carta_separacion
 	var posicion_inicial = -separacion_total / 2  # Centro las cartas
 
 	for i in range(num_cartas):
-		var card = mazo.get_child(i)
-		card.position.x = posicion_inicial + i * carta_separacion
+		var card = cards.get_child(i)
+		var posicion_final = Vector2(
+			posicion_inicial + i * carta_separacion,
+			card.position.y
+			)
+		card.position = posicion_final
 		
 func desplegar_cartas():
-	var num_cartas = mazo.get_child_count()
+	var num_cartas = cards.get_child_count()
 	var cartas_eliminar=[]
 	var lista_cartas_desplegar=[]
 	for i in range(num_cartas):
-		var card = mazo.get_child(i)
+		var card = cards.get_child(i)
 		#print(card.card_select)
 		if card.card_select==true:
 			#card.global_position = Vector2(650, 350)
@@ -55,4 +76,8 @@ func determinar_separacion_cartas(num_cartas):
 		carta_separacion=30
 	else:
 		carta_separacion=40
-
+	
+	if vertical:
+		carta_separacion*=factor_separador_vertical
+		
+	
