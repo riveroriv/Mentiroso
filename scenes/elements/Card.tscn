@@ -98,10 +98,17 @@ script = ExtResource("1_3623m")
 [node name="Back" type="Node2D" parent="Faces"]
 z_index = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Faces/Back"]
-position = Vector2(-1.52588e-05, 0)
-scale = Vector2(0.333333, 0.452402)
+[node name="CardBack" type="TextureRect" parent="Faces/Back"]
+texture_filter = 1
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
 texture = ExtResource("2_tfw5r")
+expand_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Front" type="Node2D" parent="Faces"]
 
@@ -114,6 +121,7 @@ offset_bottom = 654.0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0.5, 0.5)
 texture = ExtResource("2_jetpy")
+expand_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="CardIcon" type="TextureRect" parent="Faces/Front"]

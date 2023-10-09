@@ -32,6 +32,7 @@ script = ExtResource("1_o8imy")
 [node name="Background" parent="." instance=ExtResource("2_niuwb")]
 
 [node name="Back" type="Button" parent="."]
+visible = false
 offset_left = 1008.0
 offset_top = 64.0
 offset_right = 1528.0
@@ -46,10 +47,10 @@ flat = true
 
 [node name="Codigo" type="Label" parent="."]
 texture_filter = 3
-offset_left = 128.0
-offset_top = 128.0
-offset_right = 428.0
-offset_bottom = 229.0
+offset_left = 114.0
+offset_top = 112.0
+offset_right = 414.0
+offset_bottom = 213.0
 theme = ExtResource("3_aes4l")
 theme_override_font_sizes/font_size = 81
 text = "K9234H"
@@ -80,8 +81,8 @@ offset_bottom = 280.0
 [node name="Ranking" type="VBoxContainer" parent="ControlRanking"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 0
-offset_right = 88.0
-offset_bottom = 150.0
+offset_right = 408.0
+offset_bottom = 258.0
 theme_override_constants/separation = 30
 
 [node name="Rank1" type="HBoxContainer" parent="ControlRanking/Ranking"]
@@ -89,8 +90,8 @@ layout_mode = 2
 theme_override_constants/separation = 39
 
 [node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank1"]
-position = Vector2(135, 26)
-scale = Vector2(0.5, 0.1)
+position = Vector2(140, 27.45)
+scale = Vector2(0.531685, 0.1)
 texture = ExtResource("12_068wq")
 
 [node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank1"]
@@ -120,8 +121,8 @@ layout_mode = 2
 theme_override_constants/separation = 39
 
 [node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank2"]
-position = Vector2(135, 23)
-scale = Vector2(0.5, 0.1)
+position = Vector2(140, 27.45)
+scale = Vector2(0.531685, 0.1)
 texture = ExtResource("12_068wq")
 
 [node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank2"]
@@ -151,8 +152,8 @@ layout_mode = 2
 theme_override_constants/separation = 39
 
 [node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank3"]
-position = Vector2(135, 23)
-scale = Vector2(0.5, 0.1)
+position = Vector2(140.719, 24.45)
+scale = Vector2(0.529463, 0.1)
 texture = ExtResource("12_068wq")
 
 [node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank3"]
@@ -183,8 +184,8 @@ layout_mode = 2
 theme_override_constants/separation = 39
 
 [node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank4"]
-position = Vector2(135, 23)
-scale = Vector2(0.5, 0.1)
+position = Vector2(140.844, 24.4502)
+scale = Vector2(0.529076, 0.1)
 texture = ExtResource("12_068wq")
 
 [node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank4"]

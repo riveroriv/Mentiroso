@@ -25,7 +25,7 @@ func random_arreglo(arreglo):
 func _ready():
 	# Set the card icon and base textures.
 	front.get_node("CardIcon").texture = load("res://resources/img/" + suit + ".png")
-	front.get_node("CardBase").texture = load("res://resources/img/baseCarta.png")
+	#front.get_node("CardBase").texture = load("res://resources/img/baseCarta.png")
 	# Set the card value.
 	front.get_node("CardValue").text = value
 	if !ownership:

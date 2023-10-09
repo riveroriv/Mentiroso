@@ -17,7 +17,7 @@ var type = "lobby"
 func actualizar():
 	for rank in ranking:
 		ranking[rank].visible = false
-	var index = 1
+	var index = 0
 	for player in GameManager.Players:
 		index+=1	
 		if index > 4:
