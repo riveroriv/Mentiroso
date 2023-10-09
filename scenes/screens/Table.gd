@@ -47,7 +47,6 @@ func _ready():
 	hand_l.add_cards(hands[1])
 	hand_t.add_cards(hands[2])
 	hand_r.add_cards(hands[3])
-	mentiroso()
 	
 
 
