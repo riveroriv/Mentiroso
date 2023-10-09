@@ -1,0 +1,391 @@
+[gd_scene load_steps=15 format=3 uid="uid://bpxpd8cgi62ko"]
+
+[ext_resource type="Texture2D" uid="uid://builrd1wl6iia" path="res://resources/logo/salir.png" id="2_e2b4w"]
+[ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_elp6p"]
+[ext_resource type="Texture2D" uid="uid://c4ikebf467nbd" path="res://resources/logo/logo_transparente.png" id="4_0xu66"]
+[ext_resource type="Texture2D" uid="uid://bu6jkshbbfat2" path="res://resources/logo/play.png" id="4_tyv4w"]
+[ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="5_acx8o"]
+[ext_resource type="Texture2D" uid="uid://pf42wa8av8rp" path="res://resources/img/baseCarta.png" id="6_owjir"]
+[ext_resource type="Texture2D" uid="uid://curg4yisslrkn" path="res://resources/img/trebol.png" id="7_a6qut"]
+[ext_resource type="FontFile" uid="uid://mbegdpg6cuma" path="res://resources/fonts/cards/CARDC___.TTF" id="8_inuft"]
+[ext_resource type="Texture2D" uid="uid://dlol84p3ojs66" path="res://resources/logo/rectangulo.png" id="9_d1kcs"]
+[ext_resource type="Texture2D" uid="uid://7l7tqe152vvu" path="res://resources/img/diamante.png" id="9_vs708"]
+[ext_resource type="Texture2D" uid="uid://4kcgk8cdg4uy" path="res://resources/img/espada.png" id="10_6rhy0"]
+[ext_resource type="Texture2D" uid="uid://nldp5rt02n1f" path="res://resources/logo/corona.png" id="10_q3wk1"]
+[ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="11_fti4l"]
+[ext_resource type="Texture2D" uid="uid://bbcy2hu347w8l" path="res://resources/img/corazon.png" id="11_q1xmj"]
+
+[node name="Rank" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("2_elp6p")]
+
+[node name="AddButton" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 19.0
+offset_right = 1561.0
+offset_bottom = 539.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("2_e2b4w")
+flat = true
+
+[node name="Codigo" type="Label" parent="."]
+texture_filter = 3
+offset_left = 190.0
+offset_top = 45.0
+offset_right = 490.0
+offset_bottom = 146.0
+theme = ExtResource("5_acx8o")
+theme_override_font_sizes/font_size = 81
+text = "K9234H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jugar" type="Button" parent="."]
+offset_left = 1015.0
+offset_top = 501.0
+offset_right = 1535.0
+offset_bottom = 1021.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_tyv4w")
+flat = true
+
+[node name="Card1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 790.0
+offset_top = 223.0
+offset_right = 830.0
+offset_bottom = 263.0
+scale = Vector2(0.3, 0.3)
+
+[node name="CardBase" type="TextureRect" parent="Card1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("6_owjir")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardIcon" type="TextureRect" parent="Card1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -103.0
+offset_top = -37.0
+offset_right = 2297.0
+offset_bottom = 2363.0
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("7_a6qut")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardValue" type="Label" parent="Card1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -147.0
+offset_top = -196.0
+offset_right = -38.0
+offset_bottom = -76.0
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_inuft")
+theme_override_font_sizes/font_size = 100
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Card2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 951.0
+offset_top = 223.0
+offset_right = 991.0
+offset_bottom = 263.0
+scale = Vector2(0.3, 0.3)
+
+[node name="CardBase" type="TextureRect" parent="Card2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("6_owjir")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardIcon" type="TextureRect" parent="Card2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -103.0
+offset_top = -37.0
+offset_right = 2297.0
+offset_bottom = 2363.0
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("9_vs708")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardValue" type="Label" parent="Card2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -147.0
+offset_top = -196.0
+offset_right = -38.0
+offset_bottom = -76.0
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_inuft")
+theme_override_font_sizes/font_size = 100
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Card3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 951.0
+offset_top = 398.0
+offset_right = 991.0
+offset_bottom = 438.0
+scale = Vector2(0.3, 0.3)
+
+[node name="CardBase" type="TextureRect" parent="Card3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("6_owjir")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardIcon" type="TextureRect" parent="Card3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -103.0
+offset_top = -37.0
+offset_right = 2297.0
+offset_bottom = 2363.0
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("10_6rhy0")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardValue" type="Label" parent="Card3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -147.0
+offset_top = -196.0
+offset_right = -38.0
+offset_bottom = -76.0
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_inuft")
+theme_override_font_sizes/font_size = 100
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Card4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 790.0
+offset_top = 398.0
+offset_right = 830.0
+offset_bottom = 438.0
+scale = Vector2(0.3, 0.3)
+
+[node name="CardBase" type="TextureRect" parent="Card4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -166.0
+offset_top = -218.0
+offset_right = 494.0
+offset_bottom = 654.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("6_owjir")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardIcon" type="TextureRect" parent="Card4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -103.0
+offset_top = -37.0
+offset_right = 2297.0
+offset_bottom = 2363.0
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("11_q1xmj")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardValue" type="Label" parent="Card4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -147.0
+offset_top = -196.0
+offset_right = -38.0
+offset_bottom = -76.0
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_inuft")
+theme_override_font_sizes/font_size = 100
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlRanking" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 237.0
+offset_top = 177.0
+offset_right = 277.0
+offset_bottom = 217.0
+
+[node name="Ranking" type="VBoxContainer" parent="ControlRanking"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
+offset_right = 88.0
+offset_bottom = 150.0
+theme_override_constants/separation = 24
+
+[node name="Rank1" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRanking/Ranking/Rank1"]
+position = Vector2(135, 26)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("9_d1kcs")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+texture = ExtResource("10_q3wk1")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+theme = ExtResource("11_fti4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player1"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+theme = ExtResource("5_acx8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank2" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRanking/Ranking/Rank2"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("9_d1kcs")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+texture = ExtResource("4_0xu66")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+theme = ExtResource("11_fti4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player3"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+theme = ExtResource("5_acx8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank3" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRanking/Ranking/Rank3"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("9_d1kcs")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+texture = ExtResource("4_0xu66")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+theme = ExtResource("11_fti4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player3
+"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+theme = ExtResource("5_acx8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank4" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRanking/Ranking/Rank4"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("9_d1kcs")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+texture = ExtResource("4_0xu66")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+theme = ExtResource("11_fti4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player4
+"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+theme = ExtResource("5_acx8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2

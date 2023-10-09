@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckp8b854pjf21"]
+[gd_scene load_steps=12 format=3 uid="uid://ckp8b854pjf21"]
 
 [ext_resource type="Script" path="res://scenes/screens/Lobby.gd" id="1_o8imy"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_niuwb"]
 [ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="3_aes4l"]
+[ext_resource type="Texture2D" uid="uid://bf4hlavma3067" path="res://resources/logo/home.png" id="3_uwa6d"]
 [ext_resource type="Texture2D" uid="uid://pf42wa8av8rp" path="res://resources/img/baseCarta.png" id="4_dwcws"]
+[ext_resource type="Texture2D" uid="uid://c4ikebf467nbd" path="res://resources/logo/logo_transparente.png" id="4_varpa"]
 [ext_resource type="Texture2D" uid="uid://curg4yisslrkn" path="res://resources/img/trebol.png" id="5_4ngbx"]
 [ext_resource type="FontFile" uid="uid://mbegdpg6cuma" path="res://resources/fonts/cards/CARDC___.TTF" id="6_gpxyx"]
 [ext_resource type="Texture2D" uid="uid://7l7tqe152vvu" path="res://resources/img/diamante.png" id="7_u4cfd"]
@@ -20,8 +22,19 @@ offset_left = 180.0
 offset_top = 166.0
 offset_right = 559.0
 offset_bottom = 459.0
-item_count = 1
+theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
+select_mode = 1
+item_count = 4
+fixed_column_width = 50
+fixed_icon_size = Vector2i(50, 50)
 item_0/text = "Player1"
+item_0/icon = ExtResource("3_uwa6d")
+item_1/text = "Player2"
+item_1/icon = ExtResource("4_varpa")
+item_2/text = "Player3"
+item_2/icon = ExtResource("4_varpa")
+item_3/text = "Player4"
+item_3/icon = ExtResource("4_varpa")
 
 [node name="AddButton" type="Button" parent="."]
 offset_left = 340.0
