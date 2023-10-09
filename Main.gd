@@ -30,4 +30,7 @@ func _input(event):
 	if event.is_action_pressed("exit_full_screen") and full_screen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		full_screen = false
+		
+	if event.is_action_pressed("mentiroso"):
+		print(GameManager.Players)
 			

@@ -31,7 +31,7 @@ script = ExtResource("1_o8imy")
 
 [node name="Background" parent="." instance=ExtResource("2_niuwb")]
 
-[node name="AddButton" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 offset_left = 1008.0
 offset_top = 64.0
 offset_right = 1528.0
@@ -56,7 +56,7 @@ text = "K9234H"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Jugar" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 offset_left = 984.0
 offset_top = 472.0
 offset_right = 1504.0
@@ -209,3 +209,6 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 34
 text = "0"
 horizontal_alignment = 2
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

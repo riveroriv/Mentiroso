@@ -27,7 +27,7 @@ func peer_disconnected(id):
 # called only from clients
 func connected_to_server():
 	print("connected To Sever!")
-	send_player_info.rpc_id(1, Info.name, multiplayer.get_unique_id())
+	send_player_info.rpc_id(1, Info.player_name, multiplayer.get_unique_id())
 
 
 # called only from clients
@@ -39,24 +39,19 @@ func connection_failed():
 
 
 @rpc("any_peer")
-func send_player_info(name, id):
+func send_player_info(player_name, id, ownership=false):
 	if !GameManager.Players.has(id):
 		GameManager.Players[id] ={
-			"name" : name,
+			"name" : player_name,
 			"id" : id,
-			"score": 0
+			"score": 0,
+			"owner": ownership
 		}
 	
 	if multiplayer.is_server():
 		for i in GameManager.Players:
-			send_player_info.rpc(GameManager.Players[i].name, i)
+			send_player_info.rpc(GameManager.Players[i].name, i, GameManager.Players[i].owner)
 
-@rpc("any_peer","call_local")
-func start_game():
-	var scene = load("res://testScene.tscn").instantiate()
-	get_tree().root.add_child(scene)
-	
-	
 func host_game():
 	peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(Info.port, 2)
@@ -71,7 +66,7 @@ func host_game():
 	
 func host_player():
 	host_game()
-	send_player_info(Info.player_name, multiplayer.get_unique_id())
+	send_player_info(Info.player_name, multiplayer.get_unique_id(), true)
 	pass
 
 
@@ -80,4 +75,27 @@ func join_player():
 	peer.create_client(Info.address, Info.port)
 	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
 	multiplayer.set_multiplayer_peer(peer)	
-	pass 
+	pass
+
+
+func leave_player():
+	#multiplayer.network_peer.close_connection(multiplayer.get_unique_id())
+	get_node("/root/Main").change_scene("res://scenes/screens/Menu.tscn")
+	
+
+func get_id():
+	return multiplayer.get_unique_id()
+	
+	
+	
+	
+	
+@rpc("any_peer","call_local")
+func start_game():
+	get_node("/root/Main").change_scene("res://scenes/screens/Table.tscn")
+	
+@rpc("any_peer","call_local")
+func end_game():
+	get_node("/root/Main").change_scene("res://scenes/screens/Lobby.tscn", true)
+
+
