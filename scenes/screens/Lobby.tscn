@@ -79,6 +79,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="CardBase" type="TextureRect" parent="Card1"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -166.0
 offset_top = -218.0
 offset_right = 494.0
@@ -90,6 +91,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardIcon" type="TextureRect" parent="Card1"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -103.0
 offset_top = -37.0
 offset_right = 2297.0
@@ -101,6 +103,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardValue" type="Label" parent="Card1"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -147.0
 offset_top = -196.0
 offset_right = -38.0
@@ -126,6 +129,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="CardBase" type="TextureRect" parent="Card2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -166.0
 offset_top = -218.0
 offset_right = 494.0
@@ -137,6 +141,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardIcon" type="TextureRect" parent="Card2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -103.0
 offset_top = -37.0
 offset_right = 2297.0
@@ -148,6 +153,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardValue" type="Label" parent="Card2"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -147.0
 offset_top = -196.0
 offset_right = -38.0
@@ -173,6 +179,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="CardBase" type="TextureRect" parent="Card3"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -166.0
 offset_top = -218.0
 offset_right = 494.0
@@ -184,6 +191,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardIcon" type="TextureRect" parent="Card3"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -103.0
 offset_top = -37.0
 offset_right = 2297.0
@@ -195,6 +203,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardValue" type="Label" parent="Card3"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -147.0
 offset_top = -196.0
 offset_right = -38.0
@@ -220,6 +229,7 @@ scale = Vector2(0.3, 0.3)
 
 [node name="CardBase" type="TextureRect" parent="Card4"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -166.0
 offset_top = -218.0
 offset_right = 494.0
@@ -231,6 +241,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardIcon" type="TextureRect" parent="Card4"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -103.0
 offset_top = -37.0
 offset_right = 2297.0
@@ -242,6 +253,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CardValue" type="Label" parent="Card4"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -147.0
 offset_top = -196.0
 offset_right = -38.0

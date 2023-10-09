@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlc1bp84seyav"]
+[gd_scene load_steps=12 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
 [ext_resource type="Texture2D" uid="uid://clmvv2nhhx16a" path="res://resources/img/point.png" id="4_bunnk"]
 [ext_resource type="Theme" uid="uid://c84ls6ybgr3vq" path="res://resources/styles/text_strong.tres" id="4_ohtey"]
 [ext_resource type="PackedScene" uid="uid://cbwkqlch4ruvr" path="res://scenes/elements/Hand.tscn" id="6_4mxui"]
+[ext_resource type="Texture2D" uid="uid://cew8pd2qf35fm" path="res://resources/img/mentirosoBoton.png" id="6_dntcs"]
 [ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="7_d8y1y"]
+[ext_resource type="Texture2D" uid="uid://cso38d8cjtcyy" path="res://resources/img/playBoton.png" id="7_k42h1"]
+[ext_resource type="PackedScene" uid="uid://bsr3rufhoawq2" path="res://scenes/elements/Card.tscn" id="9_s3rcj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88t5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxi3f"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_rr6y1")
@@ -176,23 +183,21 @@ scale = Vector2(0.075, 0.075)
 texture = ExtResource("4_bunnk")
 
 [node name="Control" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = -974.0
-offset_top = -96.0
-offset_right = 178.0
-offset_bottom = 552.0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 640.0
 
 [node name="CardRound" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 362.998
-offset_top = 342.0
-offset_right = -661.002
-offset_bottom = -202.0
+offset_left = 336.0
+offset_top = 368.0
+offset_right = -688.0
+offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_d8y1y")
@@ -204,26 +209,33 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 542.998
-offset_top = 362.0
-offset_right = -531.002
-offset_bottom = -220.0
+offset_left = 632.0
+offset_top = 384.0
+offset_right = 17.0
+offset_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "M"
+scale = Vector2(0.12, 0.12)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_88t5l")
+icon = ExtResource("6_dntcs")
+flat = true
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 684.998
-offset_top = 362.0
-offset_right = -388.002
-offset_bottom = -229.0
+offset_left = 712.0
+offset_top = 384.0
+offset_right = 97.0
+offset_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "desplegar"
+scale = Vector2(0.12, 0.12)
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cxi3f")
+disabled = true
+icon = ExtResource("7_k42h1")
+flat = true
 
 [node name="Hands" type="Node" parent="."]
 
@@ -242,3 +254,11 @@ rotation = 3.14159
 [node name="Right" parent="Hands" instance=ExtResource("6_4mxui")]
 position = Vector2(1088, 336)
 rotation = -1.5708
+
+[node name="Pila" type="Node" parent="."]
+
+[node name="Card2" parent="Pila" instance=ExtResource("9_s3rcj")]
+position = Vector2(408, 304)
+
+[node name="Hand" parent="Pila" instance=ExtResource("6_4mxui")]
+position = Vector2(632, 304)
