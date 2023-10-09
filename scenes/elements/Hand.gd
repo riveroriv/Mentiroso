@@ -51,14 +51,17 @@ func desplegar_cartas():
 		if card.card_select==true:
 			#card.global_position = Vector2(650, 350)
 			cartas_eliminar.append(card)
-			lista_cartas_desplegar.append(card.chosen_suit)
-			lista_cartas_desplegar.append(card.chosen_value)
-			
+			lista_cartas_desplegar.append(card.suit)
+			lista_cartas_desplegar.append(card.value)
+	
 	for i in range(cartas_eliminar.size()):
+		
 		var card = cartas_eliminar[i]
-		remove_child(card)
-		arrange_cards()
-	return lista_cartas_desplegar
+		#card.ownership=ownership
+		print(card.value)
+		card.queue_free()
+	arrange_cards()
+		
 	
 func determinar_separacion_cartas(num_cartas):
 	if num_cartas>30:

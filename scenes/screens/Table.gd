@@ -4,14 +4,20 @@ extends Node2D
 @onready var hand_l = $Hands/Left
 @onready var hand_t = $Hands/Top
 @onready var hand_r = $Hands/Right
+
+@onready var hands ={
+	"hand": $Hands/Hand,
+	"left": $Hands/Left,
+	"top": $Hands/Top,
+	"right": $Hands/Right
+}
+
 @onready var burbujas_chat ={
 	"hand": $Hands/Hand/BurbujaChat,
 	"left": $Hands/Left/BurbujaChat,
 	"top": $Hands/Top/BurbujaChat,
 	"right": $Hands/Right/BurbujaChat
 }
-
-
 
 
 func barajado(value_subset, players = 4):
@@ -56,8 +62,9 @@ func mentiroso(hand="hand"):
 	burbujas_chat[hand].elegir_palabra(0)
 	
 # aquí se envía una señal con las cartas que se escogió para botarlas
-func descartar_cartas():
-	pass
+func descartar_cartas(hand="hand"):
+	hands[hand].desplegar_cartas()
+	
 	
 # seleccionar carta para descartar, accionada con click o espacio
 func select_card():
@@ -69,5 +76,14 @@ func unselect_card():
 # las cartas del montón pasan a la mano de un jugador
 func penalizar():
 	pass
+	
+func _process(delta):
+	if Input.is_action_pressed("mentiroso"):
+		mentiroso()
+	else:
+		burbujas_chat["hand"].visible = false
+	
+	if Input.is_action_pressed("descartar"):
+		descartar_cartas()
 	
 	
