@@ -51,8 +51,7 @@ func desplegar_cartas():
 		if card.card_select==true:
 			#card.global_position = Vector2(650, 350)
 			cartas_eliminar.append(card)
-			lista_cartas_desplegar.append(card.suit)
-			lista_cartas_desplegar.append(card.value)
+			lista_cartas_desplegar.append([card.value, card.suit])
 	
 	for i in range(cartas_eliminar.size()):
 		
@@ -61,7 +60,7 @@ func desplegar_cartas():
 		print(card.value)
 		card.queue_free()
 	arrange_cards()
-		
+	return lista_cartas_desplegar
 	
 func determinar_separacion_cartas(num_cartas):
 	if num_cartas>30:

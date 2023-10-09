@@ -5,6 +5,8 @@ extends Node2D
 @onready var hand_t = $Hands/Top
 @onready var hand_r = $Hands/Right
 
+@onready var last = $Pila/Last
+
 @onready var hands ={
 	"hand": $Hands/Hand,
 	"left": $Hands/Left,
@@ -63,8 +65,8 @@ func mentiroso(hand="hand"):
 	
 # aquí se envía una señal con las cartas que se escogió para botarlas
 func descartar_cartas(hand="hand"):
-	hands[hand].desplegar_cartas()
 	
+	last.add_cards(hands[hand].desplegar_cartas())
 	
 # seleccionar carta para descartar, accionada con click o espacio
 func select_card():
