@@ -15,18 +15,16 @@ func _ready():
 
 # this get called on the server and clients
 func peer_connected(id):
-	print("Player Connected " + str(id))
+	pass
 
 
 # this get called on the server and clients
 func peer_disconnected(id):
-	print("Player Disconnected " + str(id))
 	GameManager.Players.erase(id)
 
 
 # called only from clients
 func connected_to_server():
-	print("connected To Sever!")
 	send_player_info.rpc_id(1, Info.player_name, multiplayer.get_unique_id())
 
 
@@ -49,12 +47,13 @@ func send_player_info(player_name, id, ownership=false):
 		}
 	
 	if multiplayer.is_server():
+		print(player_name, "  ->  ", GameManager.Players)
 		for i in GameManager.Players:
 			send_player_info.rpc(GameManager.Players[i].name, i, GameManager.Players[i].owner)
 
 func host_game():
 	peer = ENetMultiplayerPeer.new()
-	var error = peer.create_server(Info.port, 2)
+	var error = peer.create_server(Info.port, 10)
 	if error != OK:
 		print("cannot host: " + error)
 		return
