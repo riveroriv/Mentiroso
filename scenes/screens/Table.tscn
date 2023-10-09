@@ -230,7 +230,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ji2gj")
 icon = ExtResource("6_dntcs")
 flat = true
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Descartar" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -33,6 +33,7 @@ var player_order = {
 	"top" = 2,
 	"right" = 3
 	}
+var position_player = {}
 
 var turn_mine = false
 var turn_next = false
@@ -51,6 +52,7 @@ func _ready():
 	for p in positions:
 		player_order[p]=relative_order[index]
 		names[p].text = GameManager.Players[relative_order[index]].name
+		position_player[relative_order[index]] = p
 		index+=1	
 	
 	
@@ -78,25 +80,22 @@ func mentiroso(hand="hand"):
 # aquí se envía una señal con las cartas que se escogió para botarlas
 func descartar_cartas(hand="hand"):
 	last.add_cards(hands[hand].desplegar_cartas())
+
+func punish(id, cards):
+	pass
 	
-# seleccionar carta para descartar, accionada con click o espacio
-func select_card():
-	pass
-
-func unselect_card():
-	pass
-
-# las cartas del montón pasan a la mano de un jugador
-func penalizar():
-	pass
+	
 	
 func _process(delta):
-	if Input.is_action_pressed("mentiroso"):
+		$Control/Descartar.disabled = !turn_mine
+		$Control/Mentiroso.disabled = turn_next and turn == 0
+	
+	
+func _input(event):
+	if Input.is_action_pressed("mentiroso") and not turn_next and turn != 0:
 		mentiroso()
 	else:
 		burbujas_chat["hand"].visible = false
-	
-	if Input.is_action_pressed("descartar"):
+		
+	if Input.is_action_pressed("descartar") and turn_mine:
 		descartar_cartas()
-	
-	
