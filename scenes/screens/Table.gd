@@ -4,6 +4,13 @@ extends Node2D
 @onready var hand_l = $Hands/Left
 @onready var hand_t = $Hands/Top
 @onready var hand_r = $Hands/Right
+@onready var burbujas_chat ={
+	"hand": $Hands/Hand/BurbujaChat,
+	"left": $Hands/Left/BurbujaChat,
+	"top": $Hands/Top/BurbujaChat,
+	"right": $Hands/Right/BurbujaChat
+}
+
 
 
 
@@ -25,7 +32,6 @@ func barajado(value_subset, players = 4):
 
 
 func _ready():
-	mentiroso()
 	Info.player_name
 	if Info.player_name != "":
 		$Players/Bottom/Label.text = Info.player_name
@@ -41,17 +47,14 @@ func _ready():
 	hand_l.add_cards(hands[1])
 	hand_t.add_cards(hands[2])
 	hand_r.add_cards(hands[3])
-	
+	mentiroso()
 	
 
 
 # esta función es para acusar - se acciona al hacer click en el boton mentiroso o presionar M
-func mentiroso():
-	const burbuja_chat = preload("res://BurbujaChat.tscn")
-	var burbuja = burbuja_chat.instantiate()
-	burbuja.chosen_value="ASDASDASDASDASDASDASDASD"
-	burbuja.scale=Vector2(100.0,100.0)
-	print("ENTRA")
+func mentiroso(hand="hand"):
+	burbujas_chat[hand].visible = true
+	burbujas_chat[hand].elegir_palabra(0)
 	
 # aquí se envía una señal con las cartas que se escogió para botarlas
 func descartar_cartas():
