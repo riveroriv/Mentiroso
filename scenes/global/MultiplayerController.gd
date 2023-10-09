@@ -1,7 +1,5 @@
 extends Node
 
-@export var Address = "127.0.0.1"
-@export var port = 8910
 var peer
 
 # Called when the node enters the scene tree for the first time.
@@ -24,10 +22,6 @@ func peer_connected(id):
 func peer_disconnected(id):
 	print("Player Disconnected " + str(id))
 	GameManager.Players.erase(id)
-	var players = get_tree().get_nodes_in_group("Player")
-	for i in players:
-		if i.name == str(id):
-			i.queue_free()
 
 
 # called only from clients
@@ -65,7 +59,7 @@ func start_game():
 	
 func host_game():
 	peer = ENetMultiplayerPeer.new()
-	var error = peer.create_server(port, 2)
+	var error = peer.create_server(Info.port, 2)
 	if error != OK:
 		print("cannot host: " + error)
 		return
@@ -83,7 +77,7 @@ func host_player():
 
 func join_player():
 	peer = ENetMultiplayerPeer.new()
-	peer.create_client(Address, port)
+	peer.create_client(Info.address, Info.port)
 	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
 	multiplayer.set_multiplayer_peer(peer)	
 	pass 

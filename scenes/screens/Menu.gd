@@ -12,11 +12,11 @@ func _on_name_text_changed(new_text):
 
 func _on_join_pressed():
 	MPC.join_player()
-	get_node("/root/Main").change_scene("res://scenes/screens/Join.tscn")
+	get_node("/root/Main").change_scene("res://scenes/screens/Lobby.tscn")
 
 func _on_new_pressed():
 	MPC.host_player()
-	get_node("/root/Main").change_scene("res://scenes/screens/Table.tscn")
+	get_node("/root/Main").change_scene("res://scenes/screens/Lobby.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
