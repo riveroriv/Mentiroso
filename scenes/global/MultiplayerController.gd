@@ -37,19 +37,24 @@ func connection_failed():
 
 
 @rpc("any_peer")
-func send_player_info(player_name, id, ownership=false):
+func send_player_info(player_name, id, order=0, ownership=false):
 	if !GameManager.Players.has(id):
 		GameManager.Players[id] ={
 			"name" : player_name,
 			"id" : id,
 			"score": 0,
-			"owner": ownership
+			"owner": ownership,
+			"order": len(GameManager.Players)
 		}
 	
 	if multiplayer.is_server():
 		print(player_name, "  ->  ", GameManager.Players)
 		for i in GameManager.Players:
-			send_player_info.rpc(GameManager.Players[i].name, i, GameManager.Players[i].owner)
+			send_player_info.rpc(
+				GameManager.Players[i].name,
+				i,
+				GameManager.Players[i].order,
+				GameManager.Players[i].owner)
 
 func host_game():
 	peer = ENetMultiplayerPeer.new()
@@ -82,14 +87,18 @@ func leave_player():
 	get_node("/root/Main").change_scene("res://scenes/screens/Menu.tscn")
 	
 
-func get_id():
+func get_my_id():
 	return multiplayer.get_unique_id()
 	
 	
+@rpc("any_peer")
+func send_hands(hands):
+	Baraja.hands = hands
+	if multiplayer.is_server():
+		var hands_barajada = Baraja.barajado(12)
+		send_hands.rpc(hands_barajada)
 	
-	
-	
-@rpc("any_peer","call_local")
+@rpc("any_peer", "call_local")
 func start_game():
 	get_node("/root/Main").change_scene("res://scenes/screens/Table.tscn")
 	

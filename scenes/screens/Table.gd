@@ -21,22 +21,24 @@ extends Node2D
 	"right": $Hands/Right/BurbujaChat
 }
 
+@onready var names ={
+	"hand": $Players/Bottom/Label,
+	"left": $Players/Left/Label,
+	"top": $Players/Top/Label,
+	"right": $Players/Right/Label
+}
+var order = {
+	"hand" = 0,
+	"left" = 1,
+	"top" = 2,
+	"right" = 3
+	}
 
-func barajado(value_subset, players = 4):
-	var baraja = []
-	var hands = []
-	
-	for i in range(value_subset):
-		for suit in Baraja.SUITS:
-			baraja.append([Baraja.VALUES[i], suit])
-	baraja.shuffle()
-	
-	for p in range(players):
-		var player_cards = []
-		for c in range(value_subset):
-			player_cards.append(baraja.pop_front())
-		hands.append(player_cards)
-	return hands
+var turn_mine = false
+var turn_next = false
+var turn = 0
+
+
 
 
 func _ready():
@@ -44,13 +46,20 @@ func _ready():
 	if Info.player_name != "":
 		$Players/Bottom/Label.text = Info.player_name
 	
+	print(Info.player_name, "  -  ", MPC.get_my_id(), "  ->  ",GameManager.order_by_relative(MPC.get_my_id())) 
+		
+		
+	
+	
 	hand.ownership = true
 	hand_l.vertical = true
 	hand_l.arrange_cards()
 	hand_r.vertical = true
 	hand_r.arrange_cards()
 	
-	var hands = barajado(12)
+	#var hands =	Baraja.hands
+	var hands =	Baraja.barajado(12)
+	
 	hand.add_cards(hands[0])
 	hand_l.add_cards(hands[1])
 	hand_t.add_cards(hands[2])
@@ -65,7 +74,6 @@ func mentiroso(hand="hand"):
 	
 # aquí se envía una señal con las cartas que se escogió para botarlas
 func descartar_cartas(hand="hand"):
-	
 	last.add_cards(hands[hand].desplegar_cartas())
 	
 # seleccionar carta para descartar, accionada con click o espacio

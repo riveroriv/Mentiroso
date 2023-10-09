@@ -246,7 +246,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_k41g7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_joqk3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cxi3f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ji2gj")
-disabled = true
 icon = ExtResource("7_k42h1")
 flat = true
 
