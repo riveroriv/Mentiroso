@@ -25,6 +25,7 @@ func barajado(value_subset, players = 4):
 
 
 func _ready():
+	mentiroso()
 	Info.player_name
 	if Info.player_name != "":
 		$Players/Bottom/Label.text = Info.player_name
@@ -46,7 +47,11 @@ func _ready():
 
 # esta función es para acusar - se acciona al hacer click en el boton mentiroso o presionar M
 func mentiroso():
-	pass
+	const burbuja_chat = preload("res://BurbujaChat.tscn")
+	var burbuja = burbuja_chat.instantiate()
+	burbuja.chosen_value="ASDASDASDASDASDASDASDASD"
+	burbuja.scale=Vector2(100.0,100.0)
+	print("ENTRA")
 	
 # aquí se envía una señal con las cartas que se escogió para botarlas
 func descartar_cartas():

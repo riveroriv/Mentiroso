@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cyj2sah1vuqyt" path="res://scenes/elements/Burbuja.tscn" id="2_pej2o"]
 
 [node name="BurbujaChat" type="Node2D"]
-position = Vector2(619, 291)
 script = ExtResource("1_wfv7a")
 
 [node name="Burbuja" parent="." instance=ExtResource("2_pej2o")]
