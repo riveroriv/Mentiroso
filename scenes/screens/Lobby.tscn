@@ -1,72 +1,196 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckp8b854pjf21"]
+[gd_scene load_steps=16 format=3 uid="uid://bpxpd8cgi62ko"]
 
 [ext_resource type="Script" path="res://scenes/screens/Lobby.gd" id="1_o8imy"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_niuwb"]
 [ext_resource type="Theme" uid="uid://bjkotowb4fwka" path="res://resources/styles/number.tres" id="3_aes4l"]
-[ext_resource type="Texture2D" uid="uid://bf4hlavma3067" path="res://resources/logo/home.png" id="3_uwa6d"]
+[ext_resource type="Texture2D" uid="uid://builrd1wl6iia" path="res://resources/logo/salir.png" id="3_qt646"]
 [ext_resource type="Texture2D" uid="uid://pf42wa8av8rp" path="res://resources/img/baseCarta.png" id="4_dwcws"]
 [ext_resource type="Texture2D" uid="uid://c4ikebf467nbd" path="res://resources/logo/logo_transparente.png" id="4_varpa"]
 [ext_resource type="Texture2D" uid="uid://curg4yisslrkn" path="res://resources/img/trebol.png" id="5_4ngbx"]
+[ext_resource type="Texture2D" uid="uid://bu6jkshbbfat2" path="res://resources/logo/play.png" id="5_8ilqf"]
 [ext_resource type="FontFile" uid="uid://mbegdpg6cuma" path="res://resources/fonts/cards/CARDC___.TTF" id="6_gpxyx"]
 [ext_resource type="Texture2D" uid="uid://7l7tqe152vvu" path="res://resources/img/diamante.png" id="7_u4cfd"]
 [ext_resource type="Texture2D" uid="uid://4kcgk8cdg4uy" path="res://resources/img/espada.png" id="8_2im15"]
 [ext_resource type="Texture2D" uid="uid://bbcy2hu347w8l" path="res://resources/img/corazon.png" id="9_e2v6i"]
+[ext_resource type="Texture2D" uid="uid://dlol84p3ojs66" path="res://resources/logo/rectangulo.png" id="12_068wq"]
+[ext_resource type="Texture2D" uid="uid://nldp5rt02n1f" path="res://resources/logo/corona.png" id="13_85dph"]
+[ext_resource type="Theme" uid="uid://rwijw8q00dy8" path="res://resources/styles/text.tres" id="14_cpt1k"]
 
 [node name="Lobby" type="Node2D"]
 script = ExtResource("1_o8imy")
 
 [node name="Background" parent="." instance=ExtResource("2_niuwb")]
 
-[node name="ItemList" type="ItemList" parent="."]
-offset_left = 180.0
-offset_top = 166.0
-offset_right = 559.0
-offset_bottom = 459.0
-theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
-select_mode = 1
-item_count = 4
-fixed_column_width = 50
-fixed_icon_size = Vector2i(50, 50)
-item_0/text = "Player1"
-item_0/icon = ExtResource("3_uwa6d")
-item_1/text = "Player2"
-item_1/icon = ExtResource("4_varpa")
-item_2/text = "Player3"
-item_2/icon = ExtResource("4_varpa")
-item_3/text = "Player4"
-item_3/icon = ExtResource("4_varpa")
-
 [node name="AddButton" type="Button" parent="."]
-offset_left = 340.0
-offset_top = 500.0
-offset_right = 408.0
-offset_bottom = 546.0
-text = "Add"
-
-[node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 190.0
-offset_top = 500.0
-offset_right = 292.0
+offset_left = 1041.0
+offset_top = 19.0
+offset_right = 1561.0
 offset_bottom = 539.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("3_qt646")
+flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Codigo" type="Label" parent="."]
 texture_filter = 3
-offset_left = 132.0
-offset_top = 69.0
-offset_right = 594.0
-offset_bottom = 125.0
+offset_left = 190.0
+offset_top = 45.0
+offset_right = 490.0
+offset_bottom = 146.0
 theme = ExtResource("3_aes4l")
-theme_override_font_sizes/font_size = 43
-text = "Esperando jugadores..."
+theme_override_font_sizes/font_size = 81
+text = "K9234H"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Jugar" type="Button" parent="."]
-offset_left = 458.0
-offset_top = 500.0
-offset_right = 526.0
-offset_bottom = 546.0
-text = "Jugar"
+offset_left = 1015.0
+offset_top = 501.0
+offset_right = 1535.0
+offset_bottom = 1021.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("5_8ilqf")
+flat = true
+
+[node name="ControlRanking" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 237.0
+offset_top = 177.0
+offset_right = 277.0
+offset_bottom = 217.0
+
+[node name="Ranking" type="VBoxContainer" parent="ControlRanking"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
+offset_right = 88.0
+offset_bottom = 150.0
+theme_override_constants/separation = 30
+
+[node name="Rank1" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank1"]
+position = Vector2(135, 26)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("12_068wq")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+texture = ExtResource("13_85dph")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+theme = ExtResource("14_cpt1k")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player1"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank1"]
+layout_mode = 2
+theme = ExtResource("3_aes4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank2" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank2"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("12_068wq")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+texture = ExtResource("4_varpa")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+theme = ExtResource("14_cpt1k")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player3"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank2"]
+layout_mode = 2
+theme = ExtResource("3_aes4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank3" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank3"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("12_068wq")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+texture = ExtResource("4_varpa")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+theme = ExtResource("14_cpt1k")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player3
+"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank3"]
+layout_mode = 2
+theme = ExtResource("3_aes4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
+
+[node name="Rank4" type="HBoxContainer" parent="ControlRanking/Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="Fondo" type="Sprite2D" parent="ControlRanking/Ranking/Rank4"]
+position = Vector2(135, 23)
+scale = Vector2(0.5, 0.1)
+texture = ExtResource("12_068wq")
+
+[node name="Icono" type="TextureRect" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+texture = ExtResource("4_varpa")
+expand_mode = 2
+
+[node name="Nombre" type="Label" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+theme = ExtResource("14_cpt1k")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 26
+text = "Player4
+"
+
+[node name="Puntuacion" type="Label" parent="ControlRanking/Ranking/Rank4"]
+layout_mode = 2
+theme = ExtResource("3_aes4l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 34
+text = "0"
+horizontal_alignment = 2
 
 [node name="Card1" type="Control" parent="."]
 layout_mode = 3
