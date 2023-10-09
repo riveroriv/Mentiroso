@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlc1bp84seyav"]
+[gd_scene load_steps=15 format=3 uid="uid://dlc1bp84seyav"]
 
 [ext_resource type="Script" path="res://scenes/screens/Table.gd" id="1_rr6y1"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_ukdoo"]
@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cso38d8cjtcyy" path="res://resources/img/playBoton.png" id="7_k42h1"]
 [ext_resource type="PackedScene" uid="uid://bsr3rufhoawq2" path="res://scenes/elements/Card.tscn" id="9_s3rcj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k41g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_joqk3"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88t5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ji2gj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxi3f"]
 
@@ -216,7 +222,10 @@ offset_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.12, 0.12)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k41g7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_joqk3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_88t5l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ji2gj")
 icon = ExtResource("6_dntcs")
 flat = true
 
@@ -232,7 +241,10 @@ offset_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.12, 0.12)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k41g7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_joqk3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cxi3f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ji2gj")
 disabled = true
 icon = ExtResource("7_k42h1")
 flat = true
@@ -257,8 +269,8 @@ rotation = -1.5708
 
 [node name="Pila" type="Node" parent="."]
 
-[node name="Card2" parent="Pila" instance=ExtResource("9_s3rcj")]
+[node name="Pila" parent="Pila" instance=ExtResource("9_s3rcj")]
 position = Vector2(408, 304)
 
-[node name="Hand" parent="Pila" instance=ExtResource("6_4mxui")]
+[node name="Last" parent="Pila" instance=ExtResource("6_4mxui")]
 position = Vector2(632, 304)

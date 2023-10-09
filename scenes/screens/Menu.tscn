@@ -1,10 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bertcc0edv0i"]
+[gd_scene load_steps=14 format=3 uid="uid://bertcc0edv0i"]
 
 [ext_resource type="Script" path="res://scenes/screens/Menu.gd" id="1_tdmlt"]
 [ext_resource type="PackedScene" uid="uid://cxoc3lcaawfhg" path="res://scenes/global/Background.tscn" id="2_s1idk"]
+[ext_resource type="Texture2D" uid="uid://df5hgqaeocx2w" path="res://resources/img/nuevaButton.png" id="3_0ejxs"]
 [ext_resource type="FontFile" uid="uid://dx7dk67ddtaee" path="res://resources/fonts/title/title_font.otf" id="3_rjk8k"]
 [ext_resource type="Theme" uid="uid://bk5kw87j0egdy" path="res://resources/styles/input.tres" id="4_c6hdo"]
+[ext_resource type="Texture2D" uid="uid://cyg08772fhryg" path="res://resources/img/unirseBoton.png" id="4_hsi2p"]
 [ext_resource type="StyleBox" uid="uid://cbq7te0vyyabj" path="res://resources/styles/text_input.tres" id="5_afjex"]
+[ext_resource type="Texture2D" uid="uid://d1q0k4ocs0vpe" path="res://resources/img/SalirButon.png" id="5_p7mjk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0dh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1lgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7le0f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kiwj2"]
 
 [sub_resource type="Theme" id="Theme_sxkmp"]
 default_font = ExtResource("3_rjk8k")
@@ -26,34 +37,51 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 28.789
 anchor_bottom = 16.19
-offset_left = 219.0
-offset_top = 449.0
-offset_right = -826.56
-offset_bottom = -112.6
-text = "NUEVA"
+offset_left = 344.0
+offset_top = 464.0
+offset_right = -278.56
+offset_bottom = 345.4
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q0dh8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h1lgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7le0f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kiwj2")
+icon = ExtResource("3_0ejxs")
+flat = true
 
 [node name="Join" type="Button" parent="Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 28.725
 anchor_bottom = 16.175
-offset_left = 489.0
+offset_left = 512.0
 offset_top = 464.0
-offset_right = -504.0
-offset_bottom = -118.0
-text = "UNIR"
+offset_right = -108.0
+offset_bottom = 346.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q0dh8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h1lgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7le0f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kiwj2")
+icon = ExtResource("4_hsi2p")
+flat = true
 
 [node name="Quit" type="Button" parent="Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 28.725
 anchor_bottom = 16.2
-offset_left = 798.0
-offset_top = 471.0
-offset_right = -255.0
-offset_bottom = -110.0
-text = "SALIR
-"
+offset_left = 680.0
+offset_top = 464.0
+offset_right = 60.0
+offset_bottom = 345.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q0dh8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h1lgj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7le0f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kiwj2")
+icon = ExtResource("5_p7mjk")
+flat = true
 
 [node name="Label" type="Label" parent="Options"]
 layout_mode = 1
