@@ -27,7 +27,7 @@ extends Node2D
 	"top": $Players/Top/Label,
 	"right": $Players/Right/Label
 }
-var order = {
+var player_order = {
 	"hand" = 0,
 	"left" = 1,
 	"top" = 2,
@@ -37,7 +37,7 @@ var order = {
 var turn_mine = false
 var turn_next = false
 var turn = 0
-
+var positions = ["hand", "left", "top", "right"]
 
 
 
@@ -45,10 +45,13 @@ func _ready():
 	Info.player_name
 	if Info.player_name != "":
 		$Players/Bottom/Label.text = Info.player_name
+	var relative_order = GameManager.order_by_relative(MPC.get_my_id())
+	var index = 0
 	
-	print(Info.player_name, "  -  ", MPC.get_my_id(), "  ->  ",GameManager.order_by_relative(MPC.get_my_id())) 
-		
-		
+	for p in positions:
+		player_order[p]=relative_order[index]
+		names[p].text = GameManager.Players[relative_order[index]].name
+		index+=1	
 	
 	
 	hand.ownership = true
